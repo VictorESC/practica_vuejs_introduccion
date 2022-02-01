@@ -43,7 +43,6 @@ var server_data = {
 var app = new Vue({
   el: '#app',
   data: {
-    col: server_data,
-    title: 'Movie List',
+    col: server_data
   }
 });
