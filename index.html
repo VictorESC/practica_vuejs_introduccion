@@ -32,20 +32,25 @@
             -->
             
             <div class="jumbotron">
-                <h1>{{ col.collection.title }}</h1>
+                <h1 id="title">{{ col.collection.title }}</h1>
             </div>
-            <div>
-                <div v-for="item in col.collection.items">
-                    <dl v-for="pelicula in item.data">
-                        <dt>
-                            {{ pelicula.prompt }}
-                        </dt>
-                        <dd>
-                            {{ pelicula.value }}
-                        </dd>
-                    </dl>
+            <div class="card-group">
+                <div class="card shadow text-center" v-for="item in col.collection.items">
+                    <div class="card-body">
+                        <dl v-for="pelicula in item.data">
+                            <dt>
+                                {{ pelicula.prompt }}
+                            </dt>
+                            <dd>
+                                {{ pelicula.value }}
+                            </dd>
+                        </dl>
+                        <a v-bind:href="item.href" target="_blank" class="btn btn-primary">Ver</a>
+                    </div>                    
                 </div>
             </div>
+
+
             
 
         </div>
